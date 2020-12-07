@@ -8,9 +8,15 @@ namespace RobotsVsDinosaurProject
 {
     class BattleField
     {
+        Fleet newFleet = new Fleet();
+        Herd newHerd = new Herd();
+        public BattleField()
+        {
+            
+        }
         public void CreateHerd()
         {
-
+            
         }
         public void CreateFleet()
         {

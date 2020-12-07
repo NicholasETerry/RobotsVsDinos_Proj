@@ -30,29 +30,29 @@ namespace RobotsVsDinosaurProject
             this.health = 100;
             if ( dino == 1)
             {
-                flyingDino();
+                FlyingDino();
             }
             else if ( dino == 2)
             {
-                swimmingDino();
+                SwimmingDino();
             }
             else
             {
-                walkingDino();
+                WalkingDino();
             }
         }
-        public void flyingDino()
+        public void FlyingDino()
         {
             energy = newRandom.Next(50, 100);
             attackPower = newRandom.Next(80, 100);
             
         }
-        public void swimmingDino()
+        public void SwimmingDino()
         {
             energy = newRandom.Next(90, 100);
             attackPower = newRandom.Next(90, 100);
         }
-        public void walkingDino()
+        public void WalkingDino()
         {
             energy = newRandom.Next(70, 100);
             attackPower = newRandom.Next(85, 100);
