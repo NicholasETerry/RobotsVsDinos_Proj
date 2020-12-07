@@ -12,13 +12,13 @@ namespace RobotsVsDinosaurProject
         Random newRandom = new Random();
         int dino;
         /// type
-        string type;
+        public string type;
         /// health
-        int health;
+        public int health;
         /// energy
-        int energy;
+        public int energy;
         /// attack power
-        int attackPower;
+        public int attackPower;
         /// 
         /// instantiate three dinosaur objects and assign the appropriate values to all the objects
         /// dinosaur objects will be stored in a Herd
@@ -26,13 +26,17 @@ namespace RobotsVsDinosaurProject
         /// dinosaur will loose health points based on attak power of robot
         public Dinosaur()
         {
+            ConstructDino();
+        }
+        public void ConstructDino()
+        {
             dino = newRandom.Next(1, 4);
             this.health = 100;
-            if ( dino == 1)
+            if (dino == 1)
             {
                 FlyingDino();
             }
-            else if ( dino == 2)
+            else if (dino == 2)
             {
                 SwimmingDino();
             }
@@ -45,7 +49,7 @@ namespace RobotsVsDinosaurProject
         {
             energy = newRandom.Next(50, 100);
             attackPower = newRandom.Next(80, 100);
-            
+            type = "Flying Pterosaurs";
         }
         public void SwimmingDino()
         {

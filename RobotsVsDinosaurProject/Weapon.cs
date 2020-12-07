@@ -8,14 +8,13 @@ namespace RobotsVsDinosaurProject
 {
     class Weapon
     {
-        int hitOnHealth;
-        int energyReduced;
-        int attackPowerReduced;
+        Random newRandom = new Random();
+        int attackPower;
+        string weapon;
         public void plasmaBlaster()
         {
-            hitOnHealth = 20;
-            energyReduced = 10;
-            attackPowerReduced = 5;
+            this.attackPower = newRandom.Next(40, 100);
+            this.weapon = "Plasma Blaster";
         }
     }
 }

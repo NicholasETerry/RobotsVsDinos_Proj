@@ -12,15 +12,11 @@ namespace RobotsVsDinosaurProject
         
         /// will contain
         /// name
-        string name;
+        public string name;
         /// health
-        int health;
+        public int health;
         /// power level
-        int powerLevel;
-        /// weapon with a type ( sword or gun or knife...)
-        string weapon ;
-        /// attack power
-        int attackPower;
+        public int powerLevel;
         /// 
         ///instantiate three robot objects and assing there appropriate values
         ///robot objects stored in the fleet
@@ -29,9 +25,8 @@ namespace RobotsVsDinosaurProject
         public Robot(string name)
         {
             this.health = 100;
-            this.powerLevel = newRandom.Next(40, 100);
-            this.weapon = "Plasma Blaster";
-            this.attackPower = 100;
+
+            this.powerLevel = 100;
         }
 
     }
