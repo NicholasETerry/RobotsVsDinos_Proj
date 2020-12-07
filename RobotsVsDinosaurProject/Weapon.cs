@@ -8,5 +8,9 @@ namespace RobotsVsDinosaurProject
 {
     class Weapon
     {
+        public void plasmaBlaster()
+        {
+
+        }
     }
 }

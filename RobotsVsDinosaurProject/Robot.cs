@@ -33,5 +33,6 @@ namespace RobotsVsDinosaurProject
             this.weapon = "Plasma Blaster";
             this.attackPower = 100;
         }
+
     }
 }
