@@ -25,7 +25,9 @@ namespace RobotsVsDinosaurProject
         {
             this.health = 100;
             // DEPENDING ON DINOTYPE
+
             // ENERGY
+
             //ATTACK POWER
         }
     }
