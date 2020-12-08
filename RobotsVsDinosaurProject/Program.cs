@@ -11,7 +11,6 @@ namespace RobotsVsDinosaurProject
         static void Main(string[] args)
         {
             BattleField newBattle = new BattleField();
-            newBattle.AttackPhase();
             Console.ReadLine();
         }
     }

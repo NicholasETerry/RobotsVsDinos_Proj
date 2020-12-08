@@ -9,8 +9,9 @@ namespace RobotsVsDinosaurProject
     class Dinosaur
     {
 
-        Random newRandom = new Random();
-        int dino;
+        Random newRandom;
+        public int dino;
+
         /// type
         public string type;
         /// health
@@ -27,11 +28,13 @@ namespace RobotsVsDinosaurProject
         public Dinosaur()
         {
             this.health = 100;
+            newRandom = new Random();
+            dino = newRandom.Next(1, 1000);
             ConstructDino();
         }
         public void ConstructDino()
         {
-            dino = newRandom.Next(1, 4);
+
             if (dino == 1)
             {
                 FlyingDino();
@@ -44,6 +47,7 @@ namespace RobotsVsDinosaurProject
             {
                 WalkingDino();
             }
+ 
         }
         public void FlyingDino()
         {
@@ -62,6 +66,14 @@ namespace RobotsVsDinosaurProject
             energy = newRandom.Next(70, 100);
             attackPower = newRandom.Next(85, 100);
             type = "Walking Achillobator";
+        }
+        public void DinoAttributesInFight()
+        {
+            Console.WriteLine("The Dinosaur you are facing is a : " + this.type);
+            Console.WriteLine("The Dinosaur's health is: " + this.health);
+            Console.WriteLine("The Dinosaur's energy level is : " + this.energy);
+            Console.WriteLine("The Dinosaur has an attack power of : " + this.attackPower);
+            Console.ReadLine();
         }
 
     }

@@ -9,8 +9,8 @@ namespace RobotsVsDinosaurProject
     class Weapon
     {
         Random newRandom = new Random();
-        int attackPower;
-        string type;
+        public int attackPower;
+        public string type;
         public void plasmaBlaster()
         {
             this.attackPower = newRandom.Next(40, 100);
