@@ -8,6 +8,7 @@ namespace RobotsVsDinosaurProject
 {
     class BattleField
     {
+        Robot newRobot;
         Dinosaur newDinosaur;
         Weapon newWeapon;
         Fleet newFleet;
@@ -16,7 +17,6 @@ namespace RobotsVsDinosaurProject
         {
             newHerd = new Herd();
             newFleet = new Fleet();
-            newDinosaur = new Dinosaur();
             
         }
         // RIGHT NOW DINO ALWAYS ATTACKS FIRST !
@@ -24,10 +24,20 @@ namespace RobotsVsDinosaurProject
         // WOULD BE MORE FUN IF RANDOM ATTACK
 
 
-        public void AttackPhase()
+        public void AttackPhase(Herd dinoFighting, Fleet roboFighting)
         {
-            Console.WriteLine("Prepair for battle !!!!!! ");
-            Console.Write(newDinosaur.type + newDinosaur.attackPower + newDinosaur.energy);
+            int robotStarting = 0;
+            int dinoStarting = 0;
+            newDinosaur = dinoFighting.newDinosaurList[dinoStarting];
+            newRobot = roboFighting.newRobotList[robotStarting];
+            // takes a dino and robot and makes them fight each other.
+
+            // dino attacks first
+            // causes damage to robot
+            // robot attacks next
+            // once health is at zero, a winner is declared
+            // the looser is removed from herd
+            // the winners attributes have to be saved to fight next enemy
         }
     }
 }

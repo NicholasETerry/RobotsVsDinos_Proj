@@ -10,11 +10,11 @@ namespace RobotsVsDinosaurProject
     {
         Random newRandom = new Random();
         int attackPower;
-        string weapon;
+        string type;
         public void plasmaBlaster()
         {
             this.attackPower = newRandom.Next(40, 100);
-            this.weapon = "Plasma Blaster";
+            this.type = "Plasma Blaster";
         }
     }
 }

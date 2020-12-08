@@ -19,9 +19,5 @@ namespace RobotsVsDinosaurProject
             newRobotList.Add(new Robot("Charlie"));
             newRobotList.Add(new Robot("Erwin"));
         }
-        public void FleetInBattle()
-        {
-
-        }
     }
 }

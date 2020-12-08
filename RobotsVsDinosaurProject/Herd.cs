@@ -19,11 +19,6 @@ namespace RobotsVsDinosaurProject
             newDinosaurList.Add(newDinosaur2);
             newDinosaurList.Add(newDinosaur3);
         }
-        public void HerdInBattle()
-        {
-
-        }
-
     }
 
 }
