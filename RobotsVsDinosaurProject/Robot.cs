@@ -9,7 +9,6 @@ namespace RobotsVsDinosaurProject
     class Robot
     {
         Weapon newWeapon = new Weapon();
-        Random newRandom = new Random();
         
         /// will contain
         /// name
@@ -37,9 +36,7 @@ namespace RobotsVsDinosaurProject
         }
         public void RobotAttributesInFight()
         {
-
-            Console.WriteLine("The robot that is fighting ! ");
-            Console.WriteLine("The robot's name is : " );
+            Console.WriteLine("The robot's name is : " + name);
             Console.WriteLine("The robot's health is : " + this.health);
             Console.WriteLine("The robot's Power Level is: " + this.powerLevel);
             Console.WriteLine("The robot is using a " + newWeapon.type + " for a weapon.");
