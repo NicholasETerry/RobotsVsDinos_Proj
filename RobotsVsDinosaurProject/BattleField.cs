@@ -8,13 +8,13 @@ namespace RobotsVsDinosaurProject
 {
     class BattleField
     {
-        Weapon newWeapon;
-        Robot newRobot;
         Dinosaur newDinosaur;
+        Robot newRobot;
         public Fleet newFleet;
         public Herd newHerd;
         public BattleField()
         {
+
             newHerd = new Herd();
             newFleet = new Fleet();
             AttackPhase();
@@ -26,10 +26,12 @@ namespace RobotsVsDinosaurProject
 
         public void AttackPhase()
         {
-
             int robotStarting = 0;
             int dinoStarting = 0;
-            newDinosaur= newHerd.newDinosaurList[dinoStarting];
+            while (robotStarting <= newFleet.newRobotList.Count()- 1 || dinoStarting <= newHerd.newDinosaurList.Count() - 1)
+            {
+
+            newDinosaur = newHerd.newDinosaurList[dinoStarting];
             newRobot = newFleet.newRobotList[robotStarting];
             newDinosaur.DinoAttributesInFight();
             newRobot.RobotAttributesInFight();
@@ -47,10 +49,14 @@ namespace RobotsVsDinosaurProject
             if(newDinosaur.health <= 0 )
             {
                 Console.WriteLine("The battle is over. The "+ newDinosaur.type + " has been killed!");
+                newHerd.newDinosaurList.Remove(newDinosaur);
+                dinoStarting++;
             }
             else if(newRobot.health <= 0)
             {
                 Console.WriteLine("The battle is over. The robot named " + newRobot.name + " has been killed!");
+                newFleet.newRobotList.Remove(newRobot);
+                robotStarting++;
             }
 
             // dino attacks first
@@ -59,6 +65,7 @@ namespace RobotsVsDinosaurProject
             // once health is at zero, a winner is declared
             // the looser is removed from herd
             // the winners attributes have to be saved to fight next enemy
+            }
         }
         public void DinoAttack()
         {
