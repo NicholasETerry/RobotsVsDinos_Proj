@@ -9,21 +9,11 @@ namespace RobotsVsDinosaurProject
     class Robot
     {
         Weapon newWeapon = new Weapon();
-        
-        /// will contain
-        /// name
         public string name;
-        /// health
         public int health;
-        /// power level
         public int powerLevel;
         public int attackPower;
         public string type;
-        /// 
-        ///instantiate three robot objects and assing there appropriate values
-        ///robot objects stored in the fleet
-        ///robot can attack dino on the battlefield
-        ///robot will loose health points based on dino attack power
         public Robot(string name)
         {
             this.name = name;
@@ -32,7 +22,6 @@ namespace RobotsVsDinosaurProject
             newWeapon.plasmaBlaster();
             attackPower = newWeapon.attackPower;
             type = newWeapon.type;
-
         }
         public void RobotAttributesInFight()
         {

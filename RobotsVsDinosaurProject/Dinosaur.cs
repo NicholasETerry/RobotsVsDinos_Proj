@@ -8,7 +8,6 @@ namespace RobotsVsDinosaurProject
 {
     class Dinosaur
     {
-
         readonly Random newRandom;
         readonly Random newRandomEnergy;
         readonly Random newRandomAttackPower;
@@ -28,7 +27,6 @@ namespace RobotsVsDinosaurProject
         }
         public void ConstructDino()
         {
-
             if (dino == 1)
             {
                 FlyingDino();
@@ -41,7 +39,6 @@ namespace RobotsVsDinosaurProject
             {
                 WalkingDino();
             }
- 
         }
         public void FlyingDino()
         {

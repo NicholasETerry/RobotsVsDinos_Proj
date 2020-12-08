@@ -14,7 +14,6 @@ namespace RobotsVsDinosaurProject
         public Herd newHerd;
         public BattleField()
         {
-
             newHerd = new Herd();
             newFleet = new Fleet();
             AttackPhase();
