@@ -8,28 +8,37 @@ namespace RobotsVsDinosaurProject
 {
     class Robot
     {
-        Weapon newWeapon = new Weapon();
+        Weapon newWeapon;
         public string name;
-        public int health;
+        public double health;
         public int powerLevel;
-        public int attackPower;
+        public double attackPower;
         public string type;
         public Robot(string name)
         {
             this.name = name;
             this.health = 100;
             this.powerLevel = 100;
-            newWeapon.plasmaBlaster();
-            attackPower = newWeapon.attackPower;
+            newWeapon = new Weapon();
             type = newWeapon.type;
+            attackPower = newWeapon.attackPower;
         }
         public void RobotAttributesInFight()
         {
-            Console.WriteLine("The robot's name is : " + name);
-            Console.WriteLine("The robot's health is : " + this.health);
-            Console.WriteLine("The robot's Power Level is: " + this.powerLevel);
+            Console.WriteLine("The robot's name is :" + name + "\n");
+            Console.Write("The robot's health is :");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(" " + this.health);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("The robot's Power Level is:");
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine(" " + this.powerLevel);
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("The robot is using a " + newWeapon.type + " for a weapon.");
-            Console.WriteLine("The weapons attack ability is : " + newWeapon.attackPower);
+            Console.Write("The weapons attack ability is :");
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine(" " + newWeapon.attackPower);
+            Console.ForegroundColor = ConsoleColor.White;
             Console.ReadLine();
         }
 

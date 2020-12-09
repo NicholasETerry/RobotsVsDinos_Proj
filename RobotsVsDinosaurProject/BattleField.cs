@@ -8,12 +8,17 @@ namespace RobotsVsDinosaurProject
 {
     class BattleField
     {
+        AttackTypes newTypes;
+        Weapon newWeapon;
         Dinosaur newDinosaur;
         Robot newRobot;
         public Fleet newFleet;
         public Herd newHerd;
         public BattleField()
         {
+
+            newTypes = new AttackTypes();
+            newWeapon = new Weapon();
             newHerd = new Herd();
             newFleet = new Fleet();
             AttackPhase();
@@ -34,6 +39,22 @@ namespace RobotsVsDinosaurProject
             {
                 if ( newDinosaur.health > 0)
                 {
+                        Console.WriteLine("Choose an attack type.\n" +
+                            "press W for Whiplash\n" +
+                            "press B for BreathFire\n" +
+                            "press T for Trample");
+                        if(Console.ReadKey().Key == ConsoleKey.W)
+                        {
+                            newTypes.WhipLash();
+                        }
+                        else if(Console.ReadKey().Key == ConsoleKey.B)
+                        {
+                            newTypes.BreathFire();
+                        }
+                        else if(Console.ReadKey().Key == ConsoleKey.T)
+                        {
+                            newTypes.Trample();
+                        }
                   DinoAttack();
                 }
                 if ( newRobot.health > 0)
@@ -62,14 +83,18 @@ namespace RobotsVsDinosaurProject
         public void DinoAttack()
         {
             newRobot.health -= newDinosaur.attackPower;
-            Console.WriteLine("The " + newDinosaur.type + " has attacked causing " + newDinosaur.attackPower + " damage to the robot.");
-            newRobot.RobotAttributesInFight();
+            Console.WriteLine("The " + newDinosaur.type + " has attacked causing " + newDinosaur.attackPower + " damage to the robot.\n");
+            newDinosaur.energy -= 10;
+            newDinosaur.attackPower *= .90;
+            newDinosaur.DinoAttributesInFight();
         }
         public void RobotAttack()
         {
             newDinosaur.health -= newRobot.attackPower;
-            Console.WriteLine("The robot " + newRobot.name + " has attacked causing " + newRobot.attackPower + " damage to the Dinosaur.");
-            newDinosaur.DinoAttributesInFight();
+            Console.WriteLine("The robot " + newRobot.name + " has attacked causing " + newRobot.attackPower + " damage to the Dinosaur.\n");
+            newRobot.powerLevel -= 10;
+            newWeapon.attackPower *= .90; 
+            newRobot.RobotAttributesInFight();
         }
         public void EndOfAttack()
         {

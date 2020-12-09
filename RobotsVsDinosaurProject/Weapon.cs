@@ -8,13 +8,44 @@ namespace RobotsVsDinosaurProject
 {
     class Weapon
     {
-        readonly Random newRandom2 = new Random();
-        public int attackPower;
+        private Random newRandom;
+        public double attackPower;
         public string type;
-        public void plasmaBlaster()
+        public Weapon()
         {
-            this.attackPower = newRandom2.Next(40, 100);
+            newRandom = new Random();
+            GiveRobotTheWeapon();
+        }
+        public void PlasmaBlaster()
+        {
+            this.attackPower = newRandom.Next(10, 60);
             this.type = "Plasma Blaster";
+        }
+        public void ElectroMagneticPulseCannon()
+        {
+            this.attackPower = newRandom.Next(50, 100);
+            this.type = "Electro Magnetic Pulse Cannon";
+        }
+        public void TriBladeScalper()
+        {
+            this.attackPower = newRandom.Next(5, 50);
+            this.type = "Triblade Scalper";
+        }
+        public void GiveRobotTheWeapon()
+        {
+            int getWeapon = newRandom.Next(1, 301);
+            if( getWeapon < 101)
+            {
+                PlasmaBlaster();
+            }
+            else if(getWeapon >= 101 && getWeapon < 201)
+            {
+                TriBladeScalper();
+            }
+            else if (getWeapon > 200)
+            {
+                ElectroMagneticPulseCannon();
+            }
         }
     }
 }
